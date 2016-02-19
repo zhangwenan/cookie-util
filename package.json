@@ -1,0 +1,26 @@
+{
+  "name": "cookie-util",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangwenan/cookie-util.git"
+  },
+  "keywords": [
+    "cookie-util",
+    "cookie",
+    "cookies",
+    "util",
+    "zhangwenan"
+  ],
+  "author": "zhangwenan <jquerytech@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangwenan/cookie-util/issues"
+  },
+  "homepage": "https://github.com/zhangwenan/cookie-util#readme"
+}
