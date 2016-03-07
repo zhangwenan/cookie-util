@@ -76,31 +76,33 @@ var merge_cookie = function(cookie_str_arr1, cookie_str_arr2){
   }
 
   var temp = [];
-  for(var i=0; i<cookie_str_arr2.length; i++){
-    var c1 = new cookie(cookie_str_arr2[i]);
-    var found = false;
+  if(cookie_str_arr2){
+    for(var i=0; i<cookie_str_arr2.length; i++){
+      var c1 = new cookie(cookie_str_arr2[i]);
+      var found = false;
 
-    for(var j=0; j<cookie_arr1.length; j++){
-      var c2 = cookie_arr1[j];
-      if(c1.equal(c2)){
-        found = true;
-        break;
-      }
-      else{
-        if(c2.name == c1.name &&
-          c2.domain.toLowerCase() == c1.domain.toLowerCase() &&
-          c2.path == c1.path &&
-          c2.value != c1.value){
-          // 域名,目录,cookie名都相同，但是cookie值不同，那么需要合并
-          cookie_arr1[j].value = c1.value;
+      for(var j=0; j<cookie_arr1.length; j++){
+        var c2 = cookie_arr1[j];
+        if(c1.equal(c2)){
           found = true;
           break;
         }
+        else{
+          if(c2.name == c1.name &&
+            c2.domain.toLowerCase() == c1.domain.toLowerCase() &&
+            c2.path == c1.path &&
+            c2.value != c1.value){
+            // 域名,目录,cookie名都相同，但是cookie值不同，那么需要合并
+            cookie_arr1[j].value = c1.value;
+            found = true;
+            break;
+          }
+        }
       }
-    }
 
-    if(!found){
-      temp.push(c1);
+      if(!found){
+        temp.push(c1);
+      }
     }
   }
 
